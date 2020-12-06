@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import de.jonas.games.pong.MainPong;
+import de.jonas.games.senso.SensoMain;
 import de.jonas.games.tictactoe.Computer;
 import de.jonas.games.tictactoe.GUI;
 import de.jonas.games.tictactoe.GewinnAlgorythmus;
@@ -26,26 +27,25 @@ public class CheckoutGame {
 
         JButton tictactoe = new JButton("Tic Tac Toe");
         tictactoe.setBounds(50, 50, 400, 50);
-        tictactoe.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                frame.dispose();
-                checkoutGameTicTacToe();
-            }
+        tictactoe.addActionListener(actionEvent -> {
+            frame.dispose();
+            checkoutGameTicTacToe();
         });
 
         JButton pong = new JButton("Pong");
         pong.setBounds(50, 120, 400, 50);
-        pong.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                frame.dispose();
-                checkoutGamePong();
-            }
+        pong.addActionListener(actionEvent -> {
+            frame.dispose();
+            checkoutGamePong();
         });
+
+        JButton senso = new JButton("Senso");
+        senso.setBounds(50, 190, 400, 50);
+        senso.addActionListener(actionEvent -> new SensoMain());
 
         frame.add(tictactoe);
         frame.add(pong);
+        frame.add(senso);
         frame.setVisible(true);
     }
 
